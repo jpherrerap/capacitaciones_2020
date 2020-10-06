@@ -47,7 +47,6 @@ while True:
 
     # Captura la tecla que está siendo apretada y almacena su valor en key
     key = cv2.waitKey(30)
-
     # Si la tecla es Esc, se sale del loop y termina el programa
     if key == 27:
         break
@@ -64,7 +63,14 @@ while True:
         action = np.array([0.44, 0.0])
 
     ### AGREGAR MÁS COMPORTAMIENTOS ###
-
+    if key == ord('s'):
+        action = np.array([-0.44, 0.0])
+    if key == ord('a'):
+        action = np.array([0.22, +1]) #cambiado 0.35
+    if key == ord('d'):
+        action = np.array([0.22, -1])
+    if key == 15:
+        action *= 1.5
 
 
     # Se ejecuta la acción definida anteriormente y se retorna la observación (obs),
